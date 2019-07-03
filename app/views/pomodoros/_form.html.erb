@@ -1,12 +1,12 @@
 <div class="text-center">
   <%= link_to root_path, remote: true do %>
-    <div id="pomodoro"></div>
+    <div id="pomodoro">
+      <span id="counter">0</span>
+    </div>
   <% end %>
 
   <%= simple_form_for pomodoro do |f| %>
     <%= f.hidden_field :count %>
-    <%= f.submit 'Touch the pomodoro' %>
+    <%= f.submit 'Touch the pomodoro', id: 'submit' %>
   <% end %>
 </div>
-
-<!-- document.getElementById('pomodoro_count').value = 4 -->
