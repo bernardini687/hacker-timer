@@ -1,4 +1,6 @@
-<%= simple_form_for pomodoro do |f| %>
-  <%= f.hidden :count %>
-  <%= f.button :submit %>
-<% end %>
+<div class="text-center">
+  <%= simple_form_for pomodoro do |f| %>
+    <%= f.input :count, as: :hidden %>
+    <%= f.submit 'Start' %>
+  <% end %>
+</div>
