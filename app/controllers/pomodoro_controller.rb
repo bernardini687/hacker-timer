@@ -1,9 +1,7 @@
-class PomodoroController < ApplicationController
-  def new
-    # Display button to create a Pomodoro,
-    # each press of the button increases a counter.
-    # The counter is used to set the Pomodoro's count to that number.
-  end
+class PomodorosController < ApplicationController
+  # Display button to create a Pomodoro,
+  # each press of the button increases a counter.
+  # The counter is used to set the Pomodoro's count to that number.
 
   def create
     # Submitting is a confirmation button that sets background jobs
