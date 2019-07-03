@@ -1,6 +1,11 @@
 <div class="text-center">
+  <div class="pomodoro">
+    <%= pomodoro.count %>
+  </div>
   <%= simple_form_for pomodoro do |f| %>
-    <%= f.input :count, as: :hidden %>
+    <%= f.hidden_field :count %>
     <%= f.submit 'Start' %>
   <% end %>
 </div>
+
+<!-- document.getElementById('pomodoro_count').value = 4 -->
