@@ -1,8 +1,3 @@
-function refreshForm(innerHTML) {
-  const newPomodoroForm = document.getElementById('new_pomodoro');
-  newPomodoroForm.innerHTML = innerHTML;
-}
-
 function setCount(value) {
   const count = document.getElementById('pomodoro_count');
   count.value = value;
@@ -15,11 +10,7 @@ function setSubmitText(text) {
 
 document.getElementById('counter').innerHTML++
 
-<% if @pomodoro.errors.any? %>
-  refreshForm('<%= j render "pomodoros/form", pomodoro: @pomodoro %>');
-<% else %>
-  setSubmitText(`Start ${document.getElementById('counter').innerHTML} pomodoros`)
-<% end %>
+setSubmitText(`Start ${document.getElementById('counter').innerHTML} pomodoros`)
 
 document.addEventListener(
   'onSubmit',

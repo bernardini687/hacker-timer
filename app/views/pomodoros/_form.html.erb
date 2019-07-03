@@ -1,12 +1,10 @@
-<div class="text-center">
-  <%= link_to root_path, remote: true do %>
-    <div id="pomodoro">
-      <span id="counter">0</span>
-    </div>
-  <% end %>
+<%= link_to root_path, remote: true do %>
+  <div id="pomodoro">
+    <span id="counter">0</span>
+  </div>
+<% end %>
 
-  <%= simple_form_for pomodoro, remote: true do |f| %>
-    <%= f.hidden_field :count %>
-    <%= f.submit 'Touch the pomodoro', id: 'submit' %>
-  <% end %>
-</div>
+<%= simple_form_for pomodoro, remote: true do |f| %>
+  <%= f.hidden_field :count %>
+  <%= f.submit 'Touch the pomodoro', id: 'submit' %>
+<% end %>
