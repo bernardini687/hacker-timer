@@ -3,16 +3,23 @@ function setCount(value) {
   count.value = value;
 }
 
-function setSubmitText(text) {
-  const submit = document.getElementById('submit')
+function setText(text) {
+  const submit = document.getElementById('submit');
   submit.value = text;
 }
 
-document.getElementById('counter').innerHTML++
+document.getElementById('counter').innerHTML++;
 
-setSubmitText(`Start ${document.getElementById('counter').innerHTML} pomodoros`)
+if (Number(document.getElementById('counter').innerHTML, 10) > 4)
+  setText(
+    `Max pomodoros is 4`
+  );
+else
+  setText(
+    `Start ${document.getElementById('counter').innerHTML} pomodoros`
+  );
 
 document.addEventListener(
   'onSubmit',
   setCount(document.getElementById('counter').innerHTML)
-)
+);
