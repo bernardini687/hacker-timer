@@ -1,10 +1,9 @@
 <div class="text-center">
-  <div class="pomodoro">
-    <%= pomodoro.count %>
+  <div id="pomodoro">
   </div>
   <%= simple_form_for pomodoro do |f| %>
     <%= f.hidden_field :count %>
-    <%= f.submit 'Start' %>
+    <%= f.submit pomodoros_form_submit_text %>
   <% end %>
 </div>
 
