@@ -2,11 +2,14 @@ class PomodorosController < ApplicationController
   def create
     @pomodoro = Pomodoro.new(set_pomodoro)
     if @pomodoro.save
-      raise
+      respond_to do |format|
+        format.html { redirect_to root_path }
+        format.js { render 'pomodoros/success' }
+      end
     else
       respond_to do |format|
         format.html { render 'pages/home' }
-        format.js
+        format.js { render 'pomodoros/failure' }
       end
     end
   end
