@@ -5,7 +5,7 @@
     </div>
   <% end %>
 
-  <%= simple_form_for pomodoro do |f| %>
+  <%= simple_form_for pomodoro, remote: true do |f| %>
     <%= f.hidden_field :count %>
     <%= f.submit 'Touch the pomodoro', id: 'submit' %>
   <% end %>
