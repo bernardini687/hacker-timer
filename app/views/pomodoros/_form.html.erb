@@ -1,6 +1,8 @@
 <div class="text-center">
-  <div id="pomodoro">
-  </div>
+  <%= link_to root_path, remote: true do %>
+    <div id="pomodoro"></div>
+  <% end %>
+
   <%= simple_form_for pomodoro do |f| %>
     <%= f.hidden_field :count %>
     <%= f.submit pomodoros_form_submit_text %>
