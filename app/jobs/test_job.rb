@@ -3,7 +3,7 @@ class TestJob < ApplicationJob
 
   def perform
     puts 'Starting the test job'
-    sleep 3
+    sleep 5
     puts 'Done'
   end
 end
