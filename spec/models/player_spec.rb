@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Player, type: :model do
   it 'is accessible' do
-    game = Game.create!
+    game = Game.create!(location: 'circus')
     player = Player.create!(game: game)
 
     expect(player).to eq(Player.last)
@@ -17,7 +17,7 @@ RSpec.describe Player, type: :model do
   end
 
   it 'validates game presence' do
-    game = Game.create!
+    game = Game.create!(location: 'circus')
 
     expect(Player.new).not_to be_valid
     expect(Player.new(game: game))

@@ -5,13 +5,17 @@ class Game < ApplicationRecord
     less_than_or_equal_to: 8
   }
 
+  validates :location, presence: true
+
   has_many :players
 
-  # after_save :create_players
+  after_save :create_players
 
-  # private
+  private
 
-  # def create_players
-  #   number_of_players.times { Player.new }
-  # end
+  def create_players
+    number_of_players.times { Player.create!(game: self) }
+    players.first.update(info: 'spy')
+    # players.where.not(info: 'spy').each { |p| p.update(info: location) }
+  end
 end
