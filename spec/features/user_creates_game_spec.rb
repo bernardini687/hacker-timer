@@ -6,10 +6,8 @@ feature 'User creates a game' do
 
     # click_on 'Inizia' || 'Begin'
 
-    within '.settings' do
-      4.times { click_link }
-    end
+    create_game(number_of_players: 5)
 
-    expect(page).to have_link('Gioca con 4 giocatori')
+    expect(page).to display_counter('1/5')
   end
 end
