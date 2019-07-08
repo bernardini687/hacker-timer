@@ -1,21 +1,34 @@
 class Game < ApplicationRecord
+  has_many :players
+
   validates :number_of_players, numericality: {
     only_integer: true,
     greater_than_or_equal_to: 3,
     less_than_or_equal_to: 8
   }
 
-  validates :location, presence: true
-
-  has_many :players
-
+  before_save :set_location
   after_save :create_players
+
+  def self.random_location
+    [
+      'spiaggia', 'teatro', 'circo', 'banca', 'terme', 'hotel', 'ristorante',
+      'supermercato', 'stazione ferroviaria', 'aeroporto', 'ospedale', 'scuola',
+      'stazione militare', 'università', 'aereo', 'treno', 'sottomarino',
+      'chiesa', 'festa aziendale', 'festa campestre', 'stazione spaziale',
+      'nave pirata', 'base di ricerca al polo sud'
+    ].sample
+  end
 
   private
 
+  def set_location
+    self.location ||= Game.random_location
+  end
+
   def create_players
     number_of_players.times { Player.create!(game: self) }
-    players.first.update(info: 'spy')
-    # players.where.not(info: 'spy').each { |p| p.update(info: location) }
+    players.first.update!(info: 'spy')
+    players.where(info: nil).each { |player| player.update!(info: location) }
   end
 end

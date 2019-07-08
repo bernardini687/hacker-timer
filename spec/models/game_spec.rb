@@ -20,7 +20,7 @@ RSpec.describe Game, type: :model do
   end
 
   it 'validates number_of_players and location columns' do
-    expect(Game.new).not_to be_valid
+    expect(Game.new).to be_valid
 
     expect(Game.new(location: 'circus')).to be_valid
 
@@ -32,6 +32,7 @@ RSpec.describe Game, type: :model do
     game = Game.create!(number_of_players: 5, location: 'circus')
 
     expect(game.players.where(info: 'spy').count).to eq 1
+    expect(game.players.where(info: 'circus').count).to eq 4
     expect(game.number_of_players).to eq(game.players.count)
   end
 end
