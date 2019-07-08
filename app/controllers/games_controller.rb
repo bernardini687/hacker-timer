@@ -6,7 +6,7 @@ class GamesController < ApplicationController
   def create
     @game = Game.new(game_params)
     if @game.save
-      redirect_to root_url
+      redirect_to game_player_url(@game, @game.players.first)
     else
       render :new
     end
