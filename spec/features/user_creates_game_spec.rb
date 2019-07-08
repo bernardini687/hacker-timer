@@ -4,8 +4,6 @@ feature 'User creates a game' do
   scenario 'successfully' do
     visit root_path
 
-    # click_on 'Inizia' || 'Begin'
-
     create_game(number_of_players: 5)
 
     expect(page).to display_counter('1/5')
