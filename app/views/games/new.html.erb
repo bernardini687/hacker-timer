@@ -1,0 +1,12 @@
+<div class="text-center">
+  <%= simple_form_for @game do |f| %>
+    <%= f.input :number_of_players,
+      label: 'Numero di giocatori',
+      collection: 3..8,
+      as: :radio_buttons,
+      include_blank: false
+    %>
+
+    <%= f.submit 'Conferma' %>
+  <% end %>
+</div>
