@@ -27,8 +27,9 @@ class Game < ApplicationRecord
   end
 
   def create_players
-    number_of_players.times { Player.create!(game: self) }
-    players.first.update!(info: 'spy')
-    players.where(info: nil).each { |player| player.update!(info: location) }
+    number_of_players.times do |number|
+      Player.create!(game: self, info: location, number: number + 1)
+    end
+    players.sample.update!(info: 'spy')
   end
 end

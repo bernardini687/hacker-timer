@@ -1,6 +1,6 @@
 <div class="text-center">
   <h1 class="players-counter">
-    <%= "/#{@game.number_of_players}" %>
+    <%= "#{@player.number}/#{@game.number_of_players}" %>
   </h1>
 
   <% if @game.players.pluck(:id).include?(@player.id + 1) %>
