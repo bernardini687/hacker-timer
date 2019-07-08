@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_02_181107) do
+ActiveRecord::Schema.define(version: 2019_07_08_112356) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "pomodoros", force: :cascade do |t|
-    t.integer "count", default: 0, null: false
+  create_table "games", force: :cascade do |t|
+    t.integer "number_of_players", default: 3, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
