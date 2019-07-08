@@ -214,6 +214,7 @@ PLATFORMS
 DEPENDENCIES
   autoprefixer-rails
   bootsnap
+  bundler (= 2.0.1)
   capybara (~> 2.7.1)
   database_cleaner
   dotenv-rails
