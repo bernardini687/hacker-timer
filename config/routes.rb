@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   root to: 'pages#home'
 
-  devise_for :users
   resources :pomodoros, only: %i[create]
 
   # Sidekiq Web UI, only for admins.
