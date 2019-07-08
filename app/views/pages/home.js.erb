@@ -10,13 +10,13 @@ function setText(text) {
 
 document.getElementById('counter').innerHTML++;
 
-if (Number(document.getElementById('counter').innerHTML, 10) > 4)
+if (Number(document.getElementById('counter').innerHTML, 10) > 10)
   setText(
-    `Max pomodoros is 4`
+    `Il massimo dei giocatori è 10`
   );
 else
   setText(
-    `Start ${document.getElementById('counter').innerHTML} pomodoros`
+    `Gioca con ${document.getElementById('counter').innerHTML} giocatori`
   );
 
 document.addEventListener(
