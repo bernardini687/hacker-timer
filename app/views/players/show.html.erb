@@ -1,15 +1,17 @@
-<div class="text-center">
-  <h1 class="players-counter">
-    <%= "#{@player.number}/#{@game.number_of_players}" %>
-  </h1>
+<h1 class="players-counter">
+  <%= "#{@player.number}/#{@game.number_of_players}" %>
+</h1>
 
-  <% if @game.players.pluck(:id).include?(@player.id + 1) %>
-    <%= link_to 'Rivela',
-      game_player_url(@game, @player.id + 1),
-      data: { confirm: @player.info }
-    %>
-  <% else %>
-    <p>Sei l'ultimo giocatore!</p>
-    <%= link_to 'Rivela', root_path, data: { confirm: @player.info } %>
-  <% end %>
-</div>
+<% if @game.players.pluck(:id).include?(@player.id + 1) %>
+
+  <%= link_to 'Rivela',
+    game_player_url(@game, @player.id + 1),
+    data: { confirm: @player.info }
+  %>
+
+<% else %>
+
+  <p>Sei l'ultimo giocatore!</p>
+  <%= link_to 'Rivela', root_path, data: { confirm: @player.info } %>
+
+<% end %>
