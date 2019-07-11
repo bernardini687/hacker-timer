@@ -3,7 +3,7 @@ class Game < ApplicationRecord
 
   validates :number_of_players, numericality: {
     only_integer: true,
-    greater_than_or_equal_to: 3,
+    greater_than_or_equal_to: 4,
     less_than_or_equal_to: 8
   }
 

@@ -1,7 +1,7 @@
 <%= simple_form_for @game do |f| %>
   <%= f.input :number_of_players,
     label: 'Numero di giocatori',
-    collection: 3..8,
+    collection: 4..8,
     as: :radio_buttons,
     include_blank: false
   %>
