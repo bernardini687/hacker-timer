@@ -1,5 +1,6 @@
 class Game < ApplicationRecord
   has_many :players
+  has_many :locations
 
   validates :number_of_players, numericality: {
     only_integer: true,
