@@ -7,7 +7,6 @@ class Game < ApplicationRecord
     less_than_or_equal_to: 8
   }
 
-  before_save :set_location
   after_save :create_players
 
   def fetch_location!(location_ids)
@@ -18,7 +17,7 @@ class Game < ApplicationRecord
   private
 
   def set_location(random_location)
-    self.location ||= random_location
+    self.location ||= random_location.name
   end
 
   def create_players
