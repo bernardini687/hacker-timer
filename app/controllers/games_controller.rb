@@ -1,6 +1,7 @@
 class GamesController < ApplicationController
   def new
     @game = Game.new
+    @locations = Location.all
   end
 
   def create

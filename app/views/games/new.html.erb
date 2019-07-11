@@ -1,7 +1,7 @@
 <%= simple_form_for @game do |f| %>
   <%= f.input :locations,
     label: 'Selezionate i luoghi possibili',
-    collection: Game.locations,
+    collection: @locations,
     as: :check_boxes
   %>
   <%= f.input :number_of_players,

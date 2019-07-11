@@ -10,24 +10,18 @@ class Game < ApplicationRecord
   before_save :set_location
   after_save :create_players
 
-  def self.locations
-    [
-      'spiaggia', 'teatro', 'circo', 'banca', 'terme', 'hotel', 'ristorante',
-      'supermercato', 'stazione ferroviaria', 'aeroporto', 'ospedale', 'scuola',
-      'stazione militare', 'università', 'aereo', 'treno', 'sottomarino',
-      'chiesa', 'festa aziendale', 'festa campestre', 'stazione spaziale',
-      'nave pirata', 'base di ricerca al polo sud'
-    ]
-  end
-
-  def self.random_location
-    locations.sample
-  end
+# [
+#   'spiaggia', 'teatro', 'circo', 'banca', 'terme', 'hotel', 'ristorante',
+#   'supermercato', 'stazione ferroviaria', 'aeroporto', 'ospedale', 'scuola',
+#   'stazione militare', 'università', 'aereo', 'treno', 'sottomarino',
+#   'chiesa', 'festa aziendale', 'festa campestre', 'stazione spaziale',
+#   'nave pirata', 'base di ricerca al polo sud'
+# ]
 
   private
 
   def set_location
-    self.location ||= Game.random_location
+    self.location ||= locations.sample
   end
 
   def create_players
