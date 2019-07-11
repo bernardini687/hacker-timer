@@ -21,7 +21,6 @@ class Game < ApplicationRecord
   end
 
   def create_players
-    raise
     number_of_players.times do |number|
       Player.create!(game: self, info: location, number: number + 1)
     end
