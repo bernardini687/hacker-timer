@@ -1,11 +1,11 @@
 <%= simple_form_for @game do |f| %>
   <%= f.input :location,
-    label: 'Selezionate i luoghi possibili',
+    label: 'Selezionare almeno 4 luoghi:',
     collection: @locations,
     as: :check_boxes
   %>
   <%= f.input :number_of_players,
-    label: 'Numero di giocatori',
+    label: 'Numero di giocatori:',
     collection: 4..8,
     as: :radio_buttons,
     include_blank: false

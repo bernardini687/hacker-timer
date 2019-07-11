@@ -1,7 +1,7 @@
 class GamesController < ApplicationController
   def new
     @game = Game.new
-    @locations = Location.all
+    @locations = Location.all.sort_by(&:name)
   end
 
   def create
