@@ -18,10 +18,6 @@ RSpec.describe Game, type: :model do
     expect(Game.new.number_of_players).to eq 4
   end
 
-  it 'has a location' do
-    expect(Game.create!.location).not_to eq nil
-  end
-
   it 'validates number_of_players and location columns' do
     expect(Game.new).to be_valid
     expect(Game.new(number_of_players: 3)).not_to be_valid

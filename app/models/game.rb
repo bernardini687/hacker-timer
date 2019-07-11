@@ -9,15 +9,15 @@ class Game < ApplicationRecord
 
   after_save :create_players
 
-  def fetch_location!(location_ids)
-    random_location = Location.where(id: location_ids).sample
-    set_location(random_location)
+  def fetch_location!(locations)
+    random_location = Location.where(id: locations).sample || Location.all.sample
+    set_location(random_location.name)
   end
 
   private
 
   def set_location(random_location)
-    self.location ||= random_location.name
+    self.location ||= random_location
   end
 
   def create_players

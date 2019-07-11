@@ -1,6 +1,8 @@
 module Features
   def create_game(number_of_players:)
     click_on 'Inizia'
+    check 'scuola'
+    check 'università'
     choose number_of_players
     click_on 'Conferma'
   end
