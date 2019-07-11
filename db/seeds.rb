@@ -19,7 +19,7 @@ puts 'Creating locations...'
   'supermercato', 'stazione ferroviaria', 'aeroporto', 'ospedale', 'scuola',
   'stazione militare', 'università', 'aereo', 'treno', 'sottomarino',
   'chiesa', 'festa aziendale', 'festa campestre', 'stazione spaziale',
-  'nave pirata', 'base di ricerca al polo sud'
+  'nave pirata', 'foresta'
 ].each do |name|
   Location.create! name: name
 end

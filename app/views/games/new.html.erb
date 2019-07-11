@@ -1,6 +1,6 @@
 <%= simple_form_for @game do |f| %>
   <%= f.input :location,
-    label: 'Selezionare almeno 4 luoghi:',
+    label: 'Luoghi validi:',
     collection: @locations,
     as: :check_boxes
   %>
