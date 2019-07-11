@@ -14,8 +14,8 @@ RSpec.describe Game, type: :model do
     expect(columns).to include('location')
   end
 
-  it 'has a number of players that defaults to 3' do
-    expect(Game.new.number_of_players).to eq 3
+  it 'has a number of players that defaults to 4' do
+    expect(Game.new.number_of_players).to eq 4
   end
 
   it 'has a location' do
@@ -24,14 +24,14 @@ RSpec.describe Game, type: :model do
 
   it 'validates number_of_players and location columns' do
     expect(Game.new).to be_valid
-    expect(Game.new(number_of_players: 2)).not_to be_valid
+    expect(Game.new(number_of_players: 3)).not_to be_valid
     expect(Game.new(number_of_players: 9)).not_to be_valid
   end
 
   it 'generates the correct set-up of players' do
     game = Game.create!(number_of_players: 5, location: 'circus')
 
-    expect(game.players.where(info: 'spy').count).to eq 1
+    expect(game.players.where(info: 'spia').count).to eq 1
     expect(game.players.where(info: 'circus').count).to eq 4
   end
 end

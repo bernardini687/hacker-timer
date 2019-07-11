@@ -30,6 +30,6 @@ class Game < ApplicationRecord
     number_of_players.times do |number|
       Player.create!(game: self, info: location, number: number + 1)
     end
-    players.sample.update!(info: 'spy')
+    players.sample.update!(info: 'spia')
   end
 end
