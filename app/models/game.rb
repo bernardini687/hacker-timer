@@ -1,6 +1,6 @@
 class Game < ApplicationRecord
-  has_many :players
-  has_many :locations
+  has_many :players, dependent: :delete_all
+  has_many :locations, dependent: :delete_all
 
   validates :number_of_players, numericality: {
     only_integer: true,
@@ -10,14 +10,6 @@ class Game < ApplicationRecord
 
   before_save :set_location
   after_save :create_players
-
-# [
-#   'spiaggia', 'teatro', 'circo', 'banca', 'terme', 'hotel', 'ristorante',
-#   'supermercato', 'stazione ferroviaria', 'aeroporto', 'ospedale', 'scuola',
-#   'stazione militare', 'università', 'aereo', 'treno', 'sottomarino',
-#   'chiesa', 'festa aziendale', 'festa campestre', 'stazione spaziale',
-#   'nave pirata', 'base di ricerca al polo sud'
-# ]
 
   private
 
